@@ -20,9 +20,9 @@ This app is designed for everyone to explore various types of cancer, learn abou
 # Live Demo
 Try the app live here: 🏡 [Streamlit App](https://kg-genie-ai-powered-knowledge-graph-for-cancer-research-evzhhj.streamlit.app/)
 # Setup (if running locally)
-Clone the repo
-Install dependencies: pip install -r requirements.txt
-Run the app: streamlit run kggApp.py
+◘ Clone the repo
+◘ Install dependencies: pip install -r requirements.txt
+◘ Run the app: streamlit run kggApp.py
 # 🙏 Acknowledgments
 ◘ DisGeNET
 ◘ ChEMBL
