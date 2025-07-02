@@ -1,6 +1,6 @@
+networkx
 streamlit
 pandas
-networkx
 rdkit-pypi
 matplotlib
 requests
