@@ -1,0 +1,17 @@
+streamlit
+pandas
+networkx
+rdkit-pypi
+matplotlib
+requests
+numpy
+pyvis
+scipy
+tqdm
+scikit-learn
+plotly
+spacy
+scispacy
+neo4j
+stellargraph
+gensim
