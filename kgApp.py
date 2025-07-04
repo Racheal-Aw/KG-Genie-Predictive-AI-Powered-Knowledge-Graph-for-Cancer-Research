@@ -11,7 +11,7 @@ st.set_page_config(page_title="KG Genie Prototype", layout="wide")
 st.title("🧠  KG Genie – Activity Predictor + Network Context")
 
 BEST_THRESH = 0.50          # ← replace with your Youden threshold
-MODEL_PATH  = "RF_model.sav"
+MODEL_PATH  = "RF_model.sav" 
 SCALER_PATH = None          # or "scaler.pkl" if you saved one
 FEATURE_CSV = "main_triplet_df.csv" 
 
