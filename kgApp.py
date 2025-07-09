@@ -13,7 +13,7 @@ st.title("🧠  KG Genie – Activity Predictor + Network Context")
 BEST_THRESH = 0.50          # ← replace with your Youden threshold
 MODEL_PATH  = "RF_model.sav" 
 SCALER_PATH = None          # or "scaler.pkl" if you saved one
-FEATURE_CSV = "main_triplet_df.csv" 
+FEATURE_CSV = "triplet_df_cleaned_good.csv" 
 
 import re
 
@@ -70,7 +70,7 @@ def load_artifacts(feature_csv, model_pkl, scaler_pkl=None):
 
 
 df_feat, model, scaler = load_artifacts(
-    feature_csv="main_triplet_df.csv",
+    feature_csv="triplet_df_cleaned_good.csv",
     model_pkl="RF_model.sav"
 )
 
@@ -100,7 +100,7 @@ else:
         prob = model.predict_proba(features_scaled)[0][pred]
         st.success(f"**Prediction:** {pred}  (prob = {prob:.2f})")
 
-df = pd.read_csv("triplet_df_extended.csv")
+df = pd.read_csv("triplet_df_cleaned_good.csv")
 
 # Sidebar Filters
 st.sidebar.header("🔍 Filter")
