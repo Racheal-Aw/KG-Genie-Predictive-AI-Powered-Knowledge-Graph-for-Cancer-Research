@@ -1,15 +1,15 @@
 # 🧬 KG Genie: AI-Powered Knowledge Graph for Cancer Research
 KG Genie is an interactive, AI-enhanced platform for constructing and exploring biomedical knowledge graphs focused on cancer-related entities such as genes, pathways, diseases, and drug-target interactions. Built with Streamlit, it enables researchers to visualize complex relationships across oncogenes, cancer types, signalling pathways, and therapeutic active compounds.
-# 🌐 **Visualise** complex relationships (oncogenes ⇄ cancer types ⇄ signalling pathways ⇄ therapeutic compounds).  
-# 🔮 **Predict**—in a single click—whether a selected drug is *active* or *inactive* against its target, using a machine‑learning model trained on molecular fingerprints + graph embeddings.
+# 🌐 **Visualise** **complex relationships (oncogenes ⇄ cancer types ⇄ signalling pathways ⇄ therapeutic compounds). ** 
+# 🔮** **Predict**—in a single click—whether a selected drug is *active* or *inactive* against its target, using a machine‑learning model trained on molecular fingerprints + graph embeddings.**
 ## 🌟 Key Features
 | Category | Highlights |
 |----------|------------|
-| **Knowledge Graph** | Triplet‑based KG built from ChEMBL, DisGeNET, KEGG & more |
+| **Knowledge Graph** | **Triplet‑based KG built from ChEMBL, DisGeNET, KEGG & more |**
 | **Drug‑Activity Prediction** | One‑click predict to estimate *Active / Inactive* status with **88 % accuracy** |
-| **Data Breadth** | Gene‑pathway‑disease‑drug mapping, SMILES strings, binding affinities & approval status |
-| **Interactive UI** | Sidebar filters, dropdown drug, gene, pathway and disease selector, zoomable graph, probability read‑outs |
-| **Modular** | Easily extend to other therapeutic areas or data sources |
+| **Data Breadth** | **Gene‑pathway‑disease‑drug mapping, SMILES strings, binding affinities & approval status |**
+| **Interactive UI** |** Sidebar filters, dropdown drug, gene, pathway and disease selector, zoomable graph, probability read‑outs |**
+| **Modular** | **Easily extend to other therapeutic areas or data sources |**
 ---
 ## 🧠 Example Walk‑Through
 1. **Select a drug** 
