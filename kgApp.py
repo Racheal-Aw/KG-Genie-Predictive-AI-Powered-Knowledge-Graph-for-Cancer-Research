@@ -227,7 +227,7 @@ for node in G.nodes():
     elif node in gene_options:
         node_color.append('skyblue')
     elif node in pathway_options:
-        node_color.append('purple')
+        node_color.append('black')
     else:
         node_color.append('lightgreen')
 
