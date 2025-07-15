@@ -10,7 +10,7 @@ from sklearn.preprocessing import StandardScaler
 st.set_page_config(page_title="KG Genie Prototype", layout="wide")
 st.title("🧠  KG Genie – Activity Predictor + Network Context")
 
-BEST_THRESH = 0.50          # ← replace with your Youden threshold
+BEST_THRESH = 0.20          # ← replace with your Youden threshold
 MODEL_PATH  = "New_RF_pipeline.sav" 
 SCALER_PATH = None          # or "scaler.pkl" if you saved one
 FEATURE_CSV = "triplet_df_cleaned_good.csv" 
@@ -76,13 +76,13 @@ df_feat, model, scaler = load_artifacts(
 
 # ----------------------------------------------------------------
 # ❹  If the choice is a drug row → run prediction
-drug_choices = df_feat["source"] if "source" in df_feat else df_feat["smiles"]
+## ❹  If the choice is a drug row → run prediction
+drug_choices = df_feat["source"] if "source" in df_feat else df_feat["smiles"].unique()
 choice = st.selectbox("Select drug", drug_choices)
-
 
 # Fetch the row
 row = df_feat.loc[df_feat["source"] == choice] if "source" in df_feat else \
-      df_feat.loc[df_feat["smiles"] == choice]
+      df_feat.loc[df_feat["smiles"] == choice].unique()
 
 if row.empty:
     st.error("Drug not found!")
@@ -96,9 +96,15 @@ else:
     features_scaled = scaler.transform(features)
 
     if st.button("🔮 Predict"):
-        pred = int(model.predict(features_scaled)[0])
-        prob = model.predict_proba(features_scaled)[0][pred]
-        st.success(f"**Prediction:** {pred}  (prob = {prob:.2f})")
+        proba = model.predict_proba(features_scaled)[0]
+        threshold = 0.2  # or use a slider for flexibility
+
+        pred = 1 if proba[1] >= threshold else 0
+        label = "🟢 Active (class 1)" if pred == 1 else "🔴 Inactive (class 0)"
+        confidence = proba[pred]
+
+        st.markdown(f"### **Prediction:** {label}")
+        st.markdown(f"**Confidence:** {confidence:.2%}")
 
 df = pd.read_csv("triplet_df_cleaned_good.csv")
 
@@ -194,7 +200,7 @@ elif filter_type == "Pathway":
 
 # Show filtered table
 st.subheader("📋 Knowledge Graph Triples")
-st.dataframe(filtered_df.head(1))
+st.dataframe(filtered_df.head(2))
 
 # Build the graph
 G = nx.DiGraph()
