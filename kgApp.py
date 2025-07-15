@@ -200,7 +200,7 @@ elif filter_type == "Pathway":
 
 # Show filtered table
 st.subheader("📋 Knowledge Graph Triples")
-st.dataframe(filtered_df.head(6))
+st.dataframe(filtered_df.head(5))
 
 # Build the graph
 G = nx.DiGraph()
